@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,11 +32,36 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final n1_controller = TextEditingController();
+  final n2_controller = TextEditingController();
+  final N1_controller = TextEditingController();
+  final N2_controller = TextEditingController();
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void _submitData() {
+    if (n1_controller.text.isEmpty ||
+        n2_controller.text.isEmpty ||
+        N1_controller.text.isEmpty ||
+        N2_controller.text.isEmpty) {
+      print('please enter all values');
+      Fluttertoast.showToast(
+          msg: "please enter all values",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.black45,
+          textColor: Colors.white,
+          fontSize: 16.0);
+      return;
+    }
+    final n1 = double.parse(n1_controller.text);
+    final n2 = double.parse(n2_controller.text);
+    final N1 = double.parse(N1_controller.text);
+    final N2 = double.parse(N2_controller.text);
+    // addtx(titleController.text,  // another way of putting it
+    // double.parse(amountContoller.text)
+    print('n1=$n1 n2=$n2 N1=$N1 N2=$N2 ');
+    //   widget.addtx(enteredTitle, enteredAmnt, _selectedDate);
+    //Navigator.of(context).pop();
   }
 
   @override
@@ -58,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     size: 60.0,
                   ),
                   Text(
-                    "Halstead calculator,",
+                    "Halstead calculator",
                     style: Theme.of(context).textTheme.headline5?.copyWith(
                         color: Colors.black38, fontWeight: FontWeight.bold),
                   ),
@@ -68,9 +94,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Flexible(
                         child: TextField(
+                          controller: n1_controller,
+                          //onSubmitted: (_) => _submitData(),
+
+                          keyboardType:
+                              TextInputType.numberWithOptions(decimal: true),
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Color(0xFF1C2341),
+                            fillColor: Colors.black12,
                             hintText: "n1",
                             border: OutlineInputBorder(
                               borderRadius:
@@ -81,9 +112,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Flexible(
                         child: TextField(
+                          controller: n2_controller,
+                          //onSubmitted: (_) => _submitData(),
+
+                          keyboardType:
+                              TextInputType.numberWithOptions(decimal: true),
+
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Color(0xFF1C2341),
+                            fillColor: Colors.black12,
                             hintText: "n2",
                             border: OutlineInputBorder(
                               borderRadius:
@@ -99,9 +136,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Flexible(
                         child: TextField(
+                          controller: N1_controller,
+                          //onSubmitted: (_) => _submitData(),
+
+                          keyboardType:
+                              TextInputType.numberWithOptions(decimal: true),
+
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Color(0xFF1C2341),
+                            fillColor: Colors.black12,
                             hintText: "N1",
                             border: OutlineInputBorder(
                               borderRadius:
@@ -112,9 +155,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Flexible(
                         child: TextField(
+                          controller: N2_controller,
+                          //onSubmitted: (_) => _submitData(),
+
+                          keyboardType:
+                              TextInputType.numberWithOptions(decimal: true),
+
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Colors.white,
+                            fillColor: Colors.black12,
                             hintText: "N2",
                             border: OutlineInputBorder(
                               borderRadius:
@@ -125,8 +174,26 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ],
                   ),
-                  Spacer(),
-                  Spacer(flex: 2), // it will take 2/6 spaces
+                  const Spacer(),
+                  Center(
+                    child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          shadowColor: Colors.blueGrey,
+                          shape: StadiumBorder(),
+                          side: BorderSide(width: 2, color: Colors.black54),
+                        ),
+                        onPressed: _submitData,
+                        child: Text(
+                          " Calculate",
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline6
+                              ?.copyWith(
+                                  color: Colors.black38,
+                                  fontWeight: FontWeight.bold),
+                        )),
+                  ),
+                  Spacer(flex: 1), // it will take 2/6 spaces
                 ],
               ),
             ),
