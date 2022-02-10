@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:halseted_calculator/results_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,8 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
     // addtx(titleController.text,  // another way of putting it
     // double.parse(amountContoller.text)
     print('n1=$n1 n2=$n2 N1=$N1 N2=$N2 ');
+    Navigator.push(context, new MaterialPageRoute(builder: (context) => Results(n1: n1, n2: n2, N1: N1, N2: N2,)));
     //   widget.addtx(enteredTitle, enteredAmnt, _selectedDate);
     //Navigator.of(context).pop();
+    
   }
 
   @override

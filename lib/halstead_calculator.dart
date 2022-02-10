@@ -1,7 +1,7 @@
 import 'dart:math';
 
 class HalsteadCalculator {
-  int halstead_vocabulary(int n1, int n2) {
+   int halstead_vocabulary(int n1, int n2) {
     return n1 + n2;
   }
 
@@ -21,7 +21,7 @@ class HalsteadCalculator {
     return (2 / n1) * (n2 / N2);
   }
 
-  double halstead_Intelegence(int n1, int n2, int N1, int N2) {
+  double halstead_intelegence(int n1, int n2, int N1, int N2) {
     double v = (N1 + N2) * (log(n1 + n2)) / (log(2));
     double d = (n1 / 2) * (N2 / n2);
     return v / d;
@@ -33,7 +33,7 @@ class HalsteadCalculator {
     return v * d;
   }
 
-  double halstead_Time(int n1, int n2, int N1, int N2) {
+  double halstead_time(int n1, int n2, int N1, int N2) {
     double v = (N1 + N2) * (log(n1 + n2)) / (log(2));
     double d = (n1 / 2) * (N2 / n2);
     double e = v * d;
