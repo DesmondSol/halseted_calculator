@@ -16,8 +16,11 @@ class Results extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey[30],
       appBar: AppBar(
-        title: Text("Results"),
+         backgroundColor: Colors.blueGrey[30],
+        foregroundColor: Colors.blueGrey[30],
+        title: Text("Results"), brightness: Brightness.dark,
       ),
       body: Center(
           child: Column(

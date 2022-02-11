@@ -28,6 +28,7 @@ class _SideMenuState extends State<SideMenu> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SizedBox(height: 16),
+                
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                   child: Text(
@@ -57,7 +58,7 @@ class _SideMenuState extends State<SideMenu> {
                         // ),
                       ),
                       Text(
-                        'Quizer',
+                        'HCalc',
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           color: Colors.white,
@@ -89,7 +90,7 @@ class _SideMenuState extends State<SideMenu> {
                               style: TextStyle(
                                 color: index == _currentPage
                                     ? Color(0xFF00FFCB)
-                                    : Colors.white,
+                                    : Colors.blueGrey[100],
                                 fontSize: 16,
                               ),
                             ),

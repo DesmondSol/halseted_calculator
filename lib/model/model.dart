@@ -20,18 +20,7 @@ List<MenuItem> menuItems = [
     menuName: 'About',
     menuIcon: Icons.local_grocery_store,
   ),
-  // MenuItem(
-  //   menuName: 'My Account',
-  //   menuIcon: Icons.account_box,
-  // ),
-  // MenuItem(
-  //   menuName: 'Notifications',
-  //   menuIcon: Icons.notifications,
-  // ),
-  // MenuItem(
-  //   menuName: 'Payments',
-  //   menuIcon: Icons.payment,
-  // ),
+
   MenuItem(
     menuName: 'Settings',
     menuIcon: Icons.settings,
