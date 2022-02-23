@@ -18,9 +18,10 @@ class Results extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey[30],
       appBar: AppBar(
-         backgroundColor: Colors.blueGrey[30],
+        backgroundColor: Colors.blueGrey[30],
         foregroundColor: Colors.blueGrey[30],
-        title: Text("Results"), brightness: Brightness.dark,
+        title: Text("Results"),
+        brightness: Brightness.dark,
       ),
       body: Center(
           child: Column(
@@ -47,12 +48,40 @@ class Results extends StatelessWidget {
               "Remaining Bugs : ${calculator.halstead_remaining_bugs(n1.toInt(), n2.toInt(), N1.toInt(), N2.toInt())}"),
           Text(
               "Program Estimated Length : ${calculator.halstead_program_estimated_length(n1.toInt(), n2.toInt())}"),
-          RaisedButton(
-              child: new Text("Go Back!"),
-              onPressed: () {
-                // Navigate back to first screen when tapped!
-                Navigator.pop(context);
-              }),
+          Container(
+            margin: EdgeInsets.all(10),
+            height: 80.0,
+            child: SizedBox.fromSize(
+              size: Size(80, 80), // button width and height
+              child: ClipOval(
+                child: Material(
+                  color: Colors.blueGrey, // button color
+                  child: InkWell(
+                    splashColor: Colors.blueAccent,
+                    // splash color
+                    onTap: () => Navigator.pop(context),
+                    // button pressed
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          color: Colors.white,
+                        ), // icon
+                        Text(
+                          "Back",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.white,
+                          ),
+                        ), // text
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       )),
     );
