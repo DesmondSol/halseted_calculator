@@ -18,7 +18,7 @@ List<MenuItem> menuItems = [
   ),
   MenuItem(
     menuName: 'About',
-    menuIcon: Icons.local_grocery_store,
+    menuIcon: Icons.info_outline_rounded,
   ),
 
   MenuItem(

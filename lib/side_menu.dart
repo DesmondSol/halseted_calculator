@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:halseted_calculator/about_us_page.dart';
 
 import 'package:halseted_calculator/model/model.dart';
 
@@ -28,7 +29,6 @@ class _SideMenuState extends State<SideMenu> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SizedBox(height: 16),
-                
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                   child: Text(
@@ -98,6 +98,12 @@ class _SideMenuState extends State<SideMenu> {
                         ),
                         onTap: () {
                           widget._onMenuItemSelection(index);
+                          if (index == 1) {
+                            Navigator.push(
+                                context,
+                                new MaterialPageRoute(
+                                    builder: (context) => About()));
+                          }
                           setState(() {
                             _currentPage = index;
                           });

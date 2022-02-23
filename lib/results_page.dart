@@ -50,9 +50,9 @@ class Results extends StatelessWidget {
               "Program Estimated Length : ${calculator.halstead_program_estimated_length(n1.toInt(), n2.toInt())}"),
           Container(
             margin: EdgeInsets.all(10),
-            height: 80.0,
+            height: 70.0,
             child: SizedBox.fromSize(
-              size: Size(80, 80), // button width and height
+              size: Size(70, 70), // button width and height
               child: ClipOval(
                 child: Material(
                   color: Colors.blueGrey, // button color
@@ -71,7 +71,7 @@ class Results extends StatelessWidget {
                         Text(
                           "Back",
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 14,
                             color: Colors.white,
                           ),
                         ), // text

@@ -145,12 +145,12 @@ class _MyHomePageState extends State<MyHomePage>
                     backgroundColor: Colors.blueGrey[100],
                     actions: <Widget>[
                       IconButton(
-                        icon: const Icon(Icons.account_box_outlined),
-                        tooltip: 'About creators',
+                        icon: const Icon(Icons.help_outline_sharp),
+                        tooltip: 'Help',
                         onPressed: () {
                           final snackBar = SnackBar(
                             content: Text(
-                              'made by Solomon Tigabu \n 1010981 ',
+                              'enter the values of n1,n2,N1,N2 and click on calculate button',
                               textAlign: TextAlign.center,
                             ),
                             backgroundColor: Theme.of(context).primaryColor,
